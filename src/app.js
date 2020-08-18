@@ -1,33 +1,31 @@
-const express = require("express");
-const cors = require("cors");
+import React from "react";
 
-// const { uuid } = require("uuidv4");
+import "./styles.css";
 
-const app = express();
+function App() {
+  async function handleAddRepository() {
+    // TODO
+  }
 
-app.use(express.json());
-app.use(cors());
+  async function handleRemoveRepository(id) {
+    // TODO
+  }
 
-const repositories = [];
+  return (
+    <div>
+      <ul data-testid="repository-list">
+        <li>
+          Repositório 1
 
-app.get("/repositories", (request, response) => {
-  // TODO
-});
+          <button onClick={() => handleRemoveRepository(1)}>
+            Remover
+          </button>
+        </li>
+      </ul>
 
-app.post("/repositories", (request, response) => {
-  // TODO
-});
+      <button onClick={handleAddRepository}>Adicionar</button>
+    </div>
+  );
+}
 
-app.put("/repositories/:id", (request, response) => {
-  // TODO
-});
-
-app.delete("/repositories/:id", (request, response) => {
-  // TODO
-});
-
-app.post("/repositories/:id/like", (request, response) => {
-  // TODO
-});
-
-module.exports = app;
+export default App;
